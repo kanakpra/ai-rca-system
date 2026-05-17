@@ -1,0 +1,59 @@
+server - 
+
+PS D:\study\ai\rca_project> history
+
+  Id CommandLine
+  -- -----------
+   1 cd D:
+   2 cd study/ai
+   3 ls
+   4 cd rca_tool
+   5 python main.py
+   6 pip install requests
+   7 python main.py
+   8 python main.py
+   9 python main.py
+  10 cd ..\rca_project\
+  11 python main.py
+  12 python main.py
+  13 python main.py
+  14 pip install fastapi uvicorn
+  15 uvicorn app:app --reload
+  16 uvicorn app:app --reload
+  17 uvicorn app:app --reload
+  18 uvicorn app:app --reload
+  19 uvicorn app:app --reload
+  20 uvicorn app:app --reload
+  21 uvicorn app:app --reload
+  
+  
+  client 
+  
+  PS D:\Study\ai\rca_project> history
+
+  Id CommandLine
+  -- -----------
+   1 cd D:
+   2 cd .\Study\ai
+   3 cd rca_project
+   4 python client.py
+   5 python client.py
+   6 python client.py
+   7 python client.py
+   8 python client.py
+   9 clear
+  10 python client.py
+  11 clear
+  12 python client.py
+  
+  
+  AI modle 
+  
+  PS C:\Users\Kanak Prajapati> history
+
+  Id CommandLine
+  -- -----------
+   1 python --version
+   2 ollama run llama3
+   3 ollama run phi3
+   4 ollama run tinyllama

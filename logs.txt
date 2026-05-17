@@ -1,0 +1,5 @@
+2026-04-26 10:01:12 INFO ServiceA Request received user_id=123
+2026-04-26 10:01:13 ERROR ServiceB Database connection timeout
+2026-04-26 10:01:13 WARN Retry attempt 1
+2026-04-26 10:01:15 ERROR ServiceB Database connection timeout
+2026-04-26 10:01:16 ERROR ServiceA Request failed status=500
