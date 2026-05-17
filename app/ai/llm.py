@@ -17,13 +17,23 @@ def call_ai(logs):
 
     prompt = load_prompt(logs)
 
-    response = requests.post(
-        "http://localhost:11434/api/generate",
-        json={
-            "model": "tinyllama",
-            "prompt": prompt,
-            "stream": False
-        }
-    )
+    try:
 
-    return response.json().get("response", "")
+        response = requests.post(
+            "http://localhost:11434/api/generate",
+            json={
+                "model": "tinyllama",
+                "prompt": prompt,
+                "stream": False
+            },
+            timeout=10
+        )
+
+        return response.json().get(
+            "response",
+            "No AI response"
+        )
+
+    except Exception as e:
+
+        return f"AI unavailable: {str(e)}"
