@@ -1,10 +1,6 @@
-VALID_FILES = [
-    "app/reasoning/parser.py",
-    "app/reasoning/severity.py",
-    "app/reasoning/correlation.py",
-    "app/api/routes.py",
-    "tests/test_parser.py",
-    "tests/test_severity.py"
+VALID_PREFIXES = [
+    "app/",
+    "tests/"
 ]
 
 
@@ -17,16 +13,17 @@ def validate_plan(plan):
         []
     )
 
-    for file in files:
+    for file_name in files:
 
-        if isinstance(file, dict):
-            file_name = file.get(
-                "file_name"
-            )
-        else:
-            file_name = file
+        valid = False
 
-        if file_name not in VALID_FILES:
+        for prefix in VALID_PREFIXES:
+
+            if file_name.startswith(prefix):
+                valid = True
+                break
+
+        if not valid:
             invalid_files.append(
                 file_name
             )

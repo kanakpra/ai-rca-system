@@ -1,24 +1,37 @@
-import requests
+import os
+
+from dotenv import load_dotenv
+
+import google.generativeai as genai
+
+
+load_dotenv()
+
+
+API_KEY = os.getenv(
+    "GEMINI_API_KEY"
+)
+
+
+genai.configure(
+    api_key=API_KEY
+)
+
+
+model = genai.GenerativeModel(
+    "models/gemini-2.5-flash"
+)
 
 
 def call_local_llm(prompt):
 
     try:
 
-        response = requests.post(
-            "http://localhost:11434/api/generate",
-            json={
-                "model": "phi3:mini",
-                "prompt": prompt,
-                "stream": False
-            },
-            timeout=30
+        response = model.generate_content(
+            prompt
         )
 
-        return response.json().get(
-            "response",
-            "No response"
-        )
+        return response.text
 
     except Exception as e:
 
