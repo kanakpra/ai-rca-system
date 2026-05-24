@@ -1,6 +1,6 @@
 # AI RCA System
 
-AI-assisted incident correlation and root cause analysis system.
+AI-assisted incident correlation and root cause analysis system for learning.
 
 ## Features
 
